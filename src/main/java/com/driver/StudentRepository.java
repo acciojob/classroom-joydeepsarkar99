@@ -59,11 +59,17 @@ public class StudentRepository {
 
     public void deleteTeacherByNameFromDB(String name){
         Teacher obj = teacherHashMap.get(name);
+        teacherHashMap.remove(name);
+        List<Student> studentList = teacherStudentPairHashMap.get(obj);
+        for(Student student : studentList){
+            studentHashMap.remove(student.getName());
+        }
         teacherStudentPairHashMap.remove(obj);
     }
 
     public void deleteAllTeachersFromDB(){
         teacherHashMap.clear();
+        studentHashMap.clear();
     }
 
 
