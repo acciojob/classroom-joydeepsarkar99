@@ -51,8 +51,8 @@ public class StudentRepository {
 
     public List<Student> getAllStudentsFromDB(){
         List<Student> studentList = new ArrayList<>();
-        for(Student obj : studentHashMap.values()){
-            studentList.add(obj);
+        for(String name : studentHashMap.keySet()){
+            studentList.add(studentHashMap.get(name));
         }
         return studentList;
     }
