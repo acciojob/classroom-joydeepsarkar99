@@ -24,6 +24,7 @@ public class StudentRepository {
 
     public void addStudentTeacherPairToDB(String student, String teacher){
         Teacher obj = teacherHashMap.get(teacher);
+
         if(teacherStudentPairHashMap.containsKey(obj)){
             List<Student> studentList = teacherStudentPairHashMap.get(obj);
             studentList.add(studentHashMap.get(student));
